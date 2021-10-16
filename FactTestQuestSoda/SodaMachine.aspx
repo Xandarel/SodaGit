@@ -12,33 +12,30 @@
     <script src="Scripts/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" action="#" runat="server">
         <asp:ScriptManager ID="ScriptManager1"
             runat="server" />
         <main>
-            <asp:UpdatePanel runat="server">
-                <ContentTemplate>
-           
-                    <div class="moneyCount">
-                        <asp:Label ID="MoneyLable" runat="server" Text="Внесено"></asp:Label>
-                        <asp:Label ID="Money" runat="server" Text="0"></asp:Label>
-                        <label>рублей</label>
-                    </div>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-            <div class="money">
-                <button onclick="addMoney(event)" value="1">
-                    <img src="Content/images/money/OneRub.png" width="50" height="50" />
-                </button>
-                <button onclick="addMoney(event)" value="2">
-                    <img src="Content/images/money/2rub.png" width="50" height="50" />
-                </button>
-                <button onclick="addMoney(event)" value="5">
-                    <img src="Content/images/money/5rub.png" width="50" height="50" />
-                </button>
-                <button onclick="addMoney(event)" value="10">
-                    <img src="Content/images/money/10rub.png" width="50" height="50" />
-                </button>
+            <div>
+                <div class="box money">
+                    <button onclick="addMoney(event)" value="1">
+                        <img src="Content/images/money/OneRub.png" width="50" height="50" />
+                    </button>
+                    <button onclick="addMoney(event)" value="2">
+                        <img src="Content/images/money/2rub.png" width="50" height="50" />
+                    </button>
+                    <button onclick="addMoney(event)" value="5">
+                        <img src="Content/images/money/5rub.png" width="50" height="50" />
+                    </button>
+                    <button onclick="addMoney(event)" value="10">
+                        <img src="Content/images/money/10rub.png" width="50" height="50" />
+                    </button>
+                </div>
+                <div class="box moneyCount">
+                    <asp:Label ID="MoneyLable" runat="server" Text="Внесено"></asp:Label>
+                    <asp:Label ID="Money" runat="server" Text="0"></asp:Label>
+                    <label>рублей</label>
+                </div>
             </div>
             <div id="container">
                 <ul id="keyboard">
@@ -52,20 +49,25 @@
                     <li class="letter clearl">7</li>
                     <li class="letter ">8</li>
                     <li class="letter">9</li>
-                    <li class="switch">abc</li>
-                    <li class="return">retur</li>
+                    <li class="switch">clear</li>
+                    <li class="return">enter</li>
                     <li class="delete lastitem"><</li>
                 </ul>
+            </div>
+            <%-- background --%>
+            <div >
+                <img src="Content/images/money/refregerator.jpg" class="background" />
+                <asp:Button ID="cola" runat="server" CssClass="cola" Width="100" Height="100" />
             </div>
         </main>
     </form>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/keyboard.js"></script>
     <script type="text/javascript">
         function addMoney(event) {
             event.preventDefault();
             var deposited = Number(document.querySelector("#<%=Money.ClientID %>").textContent);
             deposited += Number(event.currentTarget.value);
+            //deposited += money;
             document.querySelector("#<%=Money.ClientID %>").textContent = deposited;
         }
     </script>

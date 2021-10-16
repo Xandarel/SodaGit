@@ -116,7 +116,9 @@
     <Content Include="Content\images\money\2rub.png" />
     <Content Include="Content\images\money\5rub.png" />
     <Content Include="Content\images\money\OneRub.png" />
+    <Content Include="Content\images\money\refregerator.jpg" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\soda\Cola.png" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
